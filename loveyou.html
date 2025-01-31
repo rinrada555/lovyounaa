@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you love me?</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            background-color: #fddde6;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        .gif {
+            width: 200px;
+            height: 200px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .btn-container {
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #ff7b9c;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 20px;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #ff5f85;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="https://media.tenor.com/t1GTg-H7vT4AAAAM/innocent-babes.gif" alt="Cute GIF" class="gif">
+        <h1>Do you love me?</h1>
+        <div class="btn-container">
+            <button class="btn" onclick="handleClick('yes')">Yes</button>
+            <button class="btn" onclick="handleClick('no')">No</button>
+        </div>
+    </div>
+
+    <script>
+        function handleClick(choice) {
+            if (choice === 'no') {
+                Swal.fire({
+                    title: 'อยากตายรึไงง!?!',
+                    text: 'คำตอบไม่ถูกใจ กรุณาเลือกใหม่!',
+                    imageUrl: 'https://media1.tenor.com/m/pRmLSL0FDo8AAAAC/animals.gif', // GIF โกธร
+                    imageWidth: 250,
+                    imageHeight: 250,
+                    confirmButtonColor: '#ff7b9c',
+                    confirmButtonText: 'ตกลง'
+                });
+            } else {
+                // แสดงโหลดหัวใจจากภาพ
+                Swal.fire({
+                    html: '<img src="https://media1.tenor.com/m/ifyERREP7VoAAAAC/cute.gif" width="300" alt="Loading love">',
+                    background: '#fddde6', // กำหนดสีพื้นหลังเป็นสีชมพู
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+
+
+                // หลังจากโหลดเสร็จ แสดงข้อความความรัก
+                setTimeout(() => {
+                    Swal.fire({
+                        title: '7 Month With You',
+                        text: 'เค้ารักที่รักที่สุดในโลกกก!! eiei ทำตัวดีๆ หมายถึงทั้งคำพูดและการกระทำ แล้วเธอจะถูกเค้ารักอยู่เสมอ',
+                        imageUrl: 'https://media.tenor.com/hJAtld56tFkAAAAj/peach-goma.gif', // GIF น่ารัก
+                        imageWidth: 250,
+                        imageHeight: 250,
+                        confirmButtonColor: '#ff7b9c',
+                        confirmButtonText: 'Love you too 💕',
+                        background: '#fddde6'
+                    }).then(() => {
+                        // เปลี่ยนไปยังหน้าถัดไป
+                        window.location.href = "loveyoutoo.html"; // ลิงก์ไปยังหน้าใหม่
+                    });
+
+                }, 2200); // แสดงหลังจากโหลด 2 วินาที
+            }
+        }
+    </script>
+
+</body>
+
+</html>
